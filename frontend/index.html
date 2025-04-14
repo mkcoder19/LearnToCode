@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeLearn - Learn Programming Online</title>
+    <link rel="stylesheet" href="LearnToCode_modals.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CodeLearn</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#languages">Languages</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#tryit">Try It</a></li>
+                <li><a href="#about">About</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-btn">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Learn to Code Like a Pro</h1>
+            <p>Master programming languages with our interactive courses and hands-on coding environment</p>
+            <a href="#languages" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <section id="languages" class="languages-section">
+        <h2>Programming Languages</h2>
+        <div class="language-tabs">
+            <div class="tab-buttons">
+                <button class="tab-btn active" data-tab="python">Python</button>
+                <button class="tab-btn" data-tab="java">Java</button>
+                <button class="tab-btn" data-tab="cpp">C++</button>
+                <button class="tab-btn" data-tab="javascript">JavaScript</button>
+            </div>
+            <div class="tab-content">
+                <div id="python" class="tab-pane active">
+                    <h3>Python Programming</h3>
+                    <p>Learn Python, the most beginner-friendly programming language used in web development, data science, AI, and more.</p>
+                </div>
+                <div id="java" class="tab-pane">
+                    <h3>Java Programming</h3>
+                    <p>Master Java, one of the most popular languages for enterprise applications and Android development.</p>
+                </div>
+                <div id="cpp" class="tab-pane">
+                    <h3>C++ Programming</h3>
+                    <p>Learn C++, the powerful language used in game development, system programming, and performance-critical applications.</p>
+                </div>
+                <div id="javascript" class="tab-pane">
+                    <h3>JavaScript Programming</h3>
+                    <p>Become proficient in JavaScript, the language of the web that powers interactive websites and web applications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses" class="courses-section">
+        <h2>Our Courses</h2>
+        <div class="course-grid">
+            <div class="course-card">
+                <h3>Python Basics</h3>
+                <p>Learn Python fundamentals with hands-on exercises</p>
+                <a href="python_course/index.html" class="course-btn">Start Learning</a>
+                <button class="info-btn" data-course="python"><i class="fas fa-info-circle"></i></button>
+                <div class="course-modal" id="python-modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <h3>Python Programming</h3>
+                        <p><strong>Uses:</strong> Web development, Data science, AI, Scientific computing</p>
+                        <p><strong>Key Features:</strong> Easy to learn, Extensive libraries, Cross-platform</p>
+                        <p><strong>Popular Frameworks:</strong> Django, Flask, Pandas, NumPy, TensorFlow</p>
+                        <p>Python powers applications for companies like Google, NASA, and Instagram.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="course-card">
+                <h3>Java Fundamentals</h3>
+                <p>Master object-oriented programming with Java</p>
+                <a href="java_course/index.html" class="course-btn">Start Learning</a>
+                <button class="info-btn" data-course="java"><i class="fas fa-info-circle"></i></button>
+                <div class="course-modal" id="java-modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <h3>Java Programming</h3>
+                        <p><strong>Uses:</strong> Enterprise applications, Android apps, Web applications</p>
+                        <p><strong>Key Features:</strong> Platform independence, Strong memory management</p>
+                        <p><strong>Popular Frameworks:</strong> Spring, Hibernate, Android SDK</p>
+                        <p>Java powers applications for companies like Amazon, Netflix, and Uber.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="course-card">
+                <h3>C++ for Beginners</h3>
+                <p>Learn C++ from the ground up</p>
+                <a href="cpp_course/index.html" class="course-btn">Start Learning</a>
+                <button class="info-btn" data-course="cpp"><i class="fas fa-info-circle"></i></button>
+                <div class="course-modal" id="cpp-modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <h3>C++ Programming</h3>
+                        <p><strong>Uses:</strong> Game development, System programming, High-performance apps</p>
+                        <p><strong>Key Features:</strong> High performance, Low-level memory access</p>
+                        <p><strong>Popular Uses:</strong> Unreal Engine, Adobe products, Database systems</p>
+                        <p>C++ is used in performance-critical applications like trading systems and AAA games.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="course-card">
+                <h3>JavaScript Essentials</h3>
+                <p>Build interactive websites with JavaScript</p>
+                <a href="javascript_course/index.html" class="course-btn">Start Learning</a>
+                <button class="info-btn" data-course="javascript"><i class="fas fa-info-circle"></i></button>
+                <div class="course-modal" id="javascript-modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <h3>JavaScript Programming</h3>
+                        <p><strong>Uses:</strong> Web development, Mobile apps, Server-side development</p>
+                        <p><strong>Key Features:</strong> Runs in browser, Asynchronous programming</p>
+                        <p><strong>Popular Frameworks:</strong> React, Angular, Vue, Node.js</p>
+                        <p>JavaScript is used by nearly every website and powers apps like Facebook and Netflix.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tryit" class="tryit-section">
+        <h2>Try It Yourself</h2>
+        <div class="code-editor">
+            <div class="editor-header">
+                <select id="language-select">
+                    <option value="python">Python</option>
+                    <option value="java">Java</option>
+                    <option value="cpp">C++</option>
+                    <option value="javascript">JavaScript</option>
+                </select>
+                <button id="run-btn">Run Code</button>
+            </div>
+            <textarea id="code-input" placeholder="Write your code here..."></textarea>
+            <div class="output-container">
+                <h3>Output</h3>
+                <div id="code-output"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2>About Us</h2>
+        <p>CodeLearn is an online platform dedicated to helping people learn programming in an interactive and engaging way. Our mission is to make coding education accessible to everyone.</p>
+        <div class="team">
+            <h3>Our Team</h3>
+            <p>We are a group of passionate developers and educators committed to creating high-quality programming resources.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 CodeLearn. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../LearnToCode_with_modals.js"></script>
+</body>
+</html>
