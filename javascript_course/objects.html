@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Objects | CodeLearn</title>
+    <link rel="stylesheet" href="../LearnToCode.css">
+    <style>
+        .concept-page { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .concept-section { margin: 2rem 0; }
+        .code-example { background: #f5f5f5; padding: 1rem; border-radius: 5px; overflow-x: auto; }
+        .object-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .object-table th, .object-table td { border: 1px solid #ddd; padding: 8px; }
+        .object-table th { background-color: #f2f2f2; }
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 2rem; }
+        .nav-button { padding: 0.8rem 1.5rem; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CodeLearn</div>
+            <ul class="nav-links">
+                <li><a href="../LearnToCode.html">Home</a></li>
+                <li><a href="index.html">JavaScript Course</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="concept-page">
+        <h1>JavaScript Objects</h1>
+        
+        <section class="concept-section">
+            <h2>Object Literals</h2>
+            <p>Objects are collections of key-value pairs.</p>
+            
+            <div class="code-example">
+                <pre><code>// Object literal
+const person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 30,
+    isStudent: false,
+    greet: function() {
+        console.log(`Hello, my name is ${this.firstName}`);
+    }
+};
+
+// Accessing properties
+console.log(person.firstName); // "John"
+person.greet(); // "Hello, my name is John"</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Object Methods and 'this'</h2>
+            <p>Methods are functions that are properties of an object.</p>
+            
+            <div class="code-example">
+                <pre><code>const car = {
+    brand: "Toyota",
+    model: "Corolla",
+    year: 2020,
+    getAge: function() {
+        const currentYear = new Date().getFullYear();
+        return currentYear - this.year;
+    }
+};
+
+console.log(car.getAge()); // Returns the car's age</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Object Destructuring (ES6)</h2>
+            <p>Extract values from objects into distinct variables.</p>
+            
+            <div class="code-example">
+                <pre><code>const user = {
+    id: 42,
+    displayName: 'jdoe',
+    fullName: {
+        firstName: 'John',
+        lastName: 'Doe'
+    }
+};
+
+// Destructuring
+const { id, displayName } = user;
+const { firstName, lastName } = user.fullName;
+
+console.log(id); // 42
+console.log(firstName); // "John"</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Classes (ES6)</h2>
+            <p>Syntactic sugar over JavaScript's prototype-based inheritance.</p>
+            
+            <div class="code-example">
+                <pre><code>class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    greet() {
+        console.log(`Hello, my name is ${this.name}`);
+    }
+}
+
+const person1 = new Person("Alice", 25);
+person1.greet(); // "Hello, my name is Alice"</code></pre>
+            </div>
+        </section>
+
+        <div class="nav-buttons">
+            <a href="functions.html" class="nav-button">Previous: Functions</a>
+            <a href="dom.html" class="nav-button">Next: DOM Manipulation</a>
+        </div>
+    </main>
+</body>
+</html>

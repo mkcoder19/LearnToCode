@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ STL | CodeLearn</title>
+    <link rel="stylesheet" href="../LearnToCode.css">
+    <style>
+        .concept-page { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .concept-section { margin: 2rem 0; }
+        .code-example { background: #f5f5f5; padding: 1rem; border-radius: 5px; overflow-x: auto; }
+        .stl-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .stl-table th, .stl-table td { border: 1px solid #ddd; padding: 8px; }
+        .stl-table th { background-color: #f2f2f2; }
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 2rem; }
+        .nav-button { padding: 0.8rem 1.5rem; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CodeLearn</div>
+            <ul class="nav-links">
+                <li><a href="../LearnToCode.html">Home</a></li>
+                <li><a href="index.html">C++ Course</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="concept-page">
+        <h1>C++ Standard Template Library (STL)</h1>
+        
+        <section class="concept-section">
+            <h2>Containers</h2>
+            <p>The STL provides various container classes for storing data.</p>
+            
+            <table class="stl-table">
+                <tr>
+                    <th>Container</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td>vector</td>
+                    <td>Dynamic array</td>
+                    <td><code>vector<int> v = {1, 2, 3};</code></td>
+                </tr>
+                <tr>
+                    <td>list</td>
+                    <td>Doubly-linked list</td>
+                    <td><code>list<string> names;</code></td>
+                </tr>
+                <tr>
+                    <td>map</td>
+                    <td>Key-value pairs</td>
+                    <td><code>map<string, int> ages;</code></td>
+                </tr>
+                <tr>
+                    <td>set</td>
+                    <td>Unique elements</td>
+                    <td><code>set<int> uniqueNumbers;</code></td>
+                </tr>
+                <tr>
+                    <td>queue</td>
+                    <td>FIFO structure</td>
+                    <td><code>queue<string> tasks;</code></td>
+                </tr>
+                <tr>
+                    <td>stack</td>
+                    <td>LIFO structure</td>
+                    <td><code>stack<char> characters;</code></td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="concept-section">
+            <h2>Algorithms</h2>
+            <p>The STL includes powerful algorithms that work with containers.</p>
+            
+            <div class="code-example">
+                <pre><code>#include <algorithm>
+#include <vector>
+
+vector<int> numbers = {5, 2, 8, 1, 9};
+
+// Sorting
+sort(numbers.begin(), numbers.end());
+
+// Searching
+auto it = find(numbers.begin(), numbers.end(), 8);
+
+// Reversing
+reverse(numbers.begin(), numbers.end());
+
+// Counting
+int count = count_if(numbers.begin(), numbers.end(), 
+                    [](int x){ return x > 5; });</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Iterators</h2>
+            <p>Iterators provide a way to access elements in containers.</p>
+            
+            <div class="code-example">
+                <pre><code>vector<string> fruits = {"Apple", "Banana", "Orange"};
+
+// Using iterators
+for (auto it = fruits.begin(); it != fruits.end(); ++it) {
+    cout << *it << endl;
+}
+
+// Range-based for loop (C++11)
+for (const auto& fruit : fruits) {
+    cout << fruit << endl;
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Function Objects and Lambdas</h2>
+            <p>STL algorithms can be customized with functions and lambdas.</p>
+            
+            <div class="code-example">
+                <pre><code>// Function object
+struct Square {
+    int operator()(int x) const { return x * x; }
+};
+
+vector<int> nums = {1, 2, 3, 4, 5};
+
+// Transform with function object
+transform(nums.begin(), nums.end(), nums.begin(), Square());
+
+// Lambda expression
+sort(nums.begin(), nums.end(), 
+     [](int a, int b){ return a > b; }); // Descending sort</code></pre>
+            </div>
+        </section>
+
+        <div class="nav-buttons">
+            <a href="oop.html" class="nav-button">Previous: OOP</a>
+            <a href="index.html" class="nav-button">Back to Course</a>
+        </div>
+    </main>
+</body>
+</html>

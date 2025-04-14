@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Pointers | CodeLearn</title>
+    <link rel="stylesheet" href="../LearnToCode.css">
+    <style>
+        .concept-page { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .concept-section { margin: 2rem 0; }
+        .code-example { background: #f5f5f5; padding: 1rem; border-radius: 5px; overflow-x: auto; }
+        .pointer-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .pointer-table th, .pointer-table td { border: 1px solid #ddd; padding: 8px; }
+        .pointer-table th { background-color: #f2f2f2; }
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 2rem; }
+        .nav-button { padding: 0.8rem 1.5rem; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CodeLearn</div>
+            <ul class="nav-links">
+                <li><a href="../LearnToCode.html">Home</a></li>
+                <li><a href="index.html">C++ Course</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="concept-page">
+        <h1>C++ Pointers</h1>
+        
+        <section class="concept-section">
+            <h2>Pointer Basics</h2>
+            <p>A pointer is a variable that stores the memory address of another variable.</p>
+            
+            <div class="code-example">
+                <pre><code>int num = 10;
+int *ptr = &num; // Pointer declaration and initialization
+
+// Accessing value using pointer
+cout << "Value of num: " << *ptr; // 10
+cout << "Address of num: " << ptr; // Address of num</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Pointer Arithmetic</h2>
+            <p>Pointer arithmetic allows you to navigate through memory addresses.</p>
+            
+            <div class="code-example">
+                <pre><code>int arr[] = {10, 20, 30};
+int *ptr = arr; // Points to the first element
+
+cout << *ptr; // 10
+ptr++; // Move to the next integer
+cout << *ptr; // 20</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Dynamic Memory Allocation</h2>
+            <p>Using pointers, you can allocate memory dynamically using <code>new</code> and deallocate with <code>delete</code>.</p>
+            
+            <div class="code-example">
+                <pre><code>int *dynamicArray = new int[5]; // Allocate array of 5 integers
+
+// Initialize and access
+for (int i = 0; i < 5; i++) {
+    dynamicArray[i] = i * 10;
+}
+
+delete[] dynamicArray; // Deallocate memory</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Smart Pointers (C++11)</h2>
+            <p>Smart pointers manage memory automatically and help prevent memory leaks.</p>
+            
+            <div class="code-example">
+                <pre><code>#include <memory>
+
+std::unique_ptr<int> ptr1(new int(10)); // Unique pointer
+std::shared_ptr<int> ptr2 = std::make_shared<int>(20); // Shared pointer
+
+cout << *ptr1; // 10
+cout << *ptr2; // 20</code></pre>
+            </div>
+        </section>
+
+        <div class="nav-buttons">
+            <a href="arrays.html" class="nav-button">Previous: Arrays</a>
+            <a href="oop.html" class="nav-button">Next: Object-Oriented Programming</a>
+        </div>
+    </main>
+</body>
+</html>

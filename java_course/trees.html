@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trees in DSA | CodeLearn</title>
+    <link rel="stylesheet" href="../LearnToCode.css">
+    <style>
+        .content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .theory {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        .practice {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+        code {
+            background-color: #f5f5f5;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CodeLearn</div>
+            <ul class="nav-links">
+                <li><a href="../LearnToCode_final.html">Home</a></li>
+                <li><a href="dsa_index.html">DSA with Java</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content">
+        <h1>Trees in Data Structures</h1>
+        
+        <div class="theory">
+            <h2>Theory</h2>
+            <p>Trees are hierarchical data structures consisting of nodes connected by edges.</p>
+            
+            <h3>Key Characteristics:</h3>
+            <ul>
+                <li>Root node at the top</li>
+                <li>Child nodes below their parent</li>
+                <li>Used in various applications like databases, file systems</li>
+            </ul>
+
+            <div class="visual">
+                <h3>Binary Tree Visualization:</h3>
+                <div style="display: flex; justify-content: center; margin: 1rem 0;">
+                    <div style="border: 1px solid #333; padding: 1rem; background: #f8f9fa;">
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <div style="border: 1px solid #333; padding: 0.5rem; min-width: 3rem; text-align: center;">Root (10)</div>
+                            <div style="display: flex; justify-content: center; margin-top: 1rem;">
+                                <div style="display: flex; flex-direction: column; align-items: center; margin: 0 1rem;">
+                                    <div style="border: 1px solid #333; padding: 0.5rem; min-width: 3rem; text-align: center;">Left (5)</div>
+                                    <div style="display: flex; margin-top: 1rem;">
+                                        <div style="border: 1px solid #333; padding: 0.5rem; min-width: 3rem; text-align: center; margin: 0 0.5rem;">2</div>
+                                        <div style="border: 1px solid #333; padding: 0.5rem; min-width: 3rem; text-align: center; margin: 0 0.5rem;">7</div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; align-items: center; margin: 0 1rem;">
+                                    <div style="border: 1px solid #333; padding: 0.5rem; min-width: 3rem; text-align: center;">Right (15)</div>
+                                    <div style="display: flex; margin-top: 1rem;">
+                                        <div style="border: 1px solid #333; padding: 0.5rem; min-width: 3rem; text-align: center; margin: 0 0.5rem;">12</div>
+                                        <div style="border: 1px solid #333; padding: 0.5rem; min-width: 3rem; text-align: center; margin: 0 0.5rem;">20</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="text-align: center; margin-top: 0.5rem;">Hierarchical structure with parent-child relationships</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Types and Java Implementation:</h3>
+            <ul>
+                <li><strong>Binary Trees:</strong> Each node has at most two children</li>
+                <li><strong>Binary Search Trees (BST):</strong> Left child < Right child</li>
+                <li><strong>AVL Trees:</strong> Self-balancing binary search trees</li>
+            </ul>
+            
+            <pre><code>// Binary Tree Node
+class TreeNode {
+    int value;
+    TreeNode left;
+    TreeNode right;
+    
+    TreeNode(int value) {
+        this.value = value;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+// Binary Search Tree Implementation
+class BinarySearchTree {
+    TreeNode root;
+
+    void insert(int value) {
+        root = insertRec(root, value);
+    }
+
+    TreeNode insertRec(TreeNode root, int value) {
+        if (root == null) {
+            root = new TreeNode(value);
+            return root;
+        }
+        if (value < root.value) {
+            root.left = insertRec(root.left, value);
+        } else if (value > root.value) {
+            root.right = insertRec(root.right, value);
+        }
+        return root;
+    }
+
+    void inorder() {
+        inorderRec(root);
+    }
+
+    void inorderRec(TreeNode root) {
+        if (root != null) {
+            inorderRec(root.left);
+            System.out.print(root.value + " ");
+            inorderRec(root.right);
+        }
+    }
+}</code></pre>
+        </div>
+
+        <div class="practice">
+            <h2>Practice Problems</h2>
+            <ol>
+                <li>Implement a binary tree.</li>
+                <li>Write a function to perform in-order traversal.</li>
+                <li>Find the height of a binary tree.</li>
+            </ol>
+        </div>
+
+        <a href="dsa_index.html" class="back-button">Back to DSA Course</a>
+    </main>
+</body>
+</html>

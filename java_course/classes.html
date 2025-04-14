@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Classes & Objects | CodeLearn</title>
+    <link rel="stylesheet" href="../LearnToCode.css">
+    <style>
+        .concept-page { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .concept-section { margin: 2rem 0; }
+        .code-example { background: #f5f5f5; padding: 1rem; border-radius: 5px; overflow-x: auto; }
+        .class-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .class-table th, .class-table td { border: 1px solid #ddd; padding: 8px; }
+        .class-table th { background-color: #f2f2f2; }
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 2rem; }
+        .nav-button { padding: 0.8rem 1.5rem; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CodeLearn</div>
+            <ul class="nav-links">
+                <li><a href="../LearnToCode.html">Home</a></li>
+                <li><a href="index.html">Java Course</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="concept-page">
+        <h1>Java Classes and Objects</h1>
+        
+        <section class="concept-section">
+            <h2>Class Fundamentals</h2>
+            <p>Classes are blueprints for creating objects that encapsulate data and behavior.</p>
+            
+            <div class="code-example">
+                <pre><code>// Class definition
+public class Student {
+    // Fields (instance variables)
+    private String name;
+    private int age;
+    
+    // Constructor
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    // Methods
+    public void displayInfo() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+}
+
+// Creating objects
+Student student1 = new Student("Alice", 20);
+Student student2 = new Student("Bob", 22);</code></pre>
+            </div>
+            
+            <table class="class-table">
+                <tr>
+                    <th>Component</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td>Class</td>
+                    <td>Blueprint for objects</td>
+                    <td><code>class Student { ... }</code></td>
+                </tr>
+                <tr>
+                    <td>Object</td>
+                    <td>Instance of a class</td>
+                    <td><code>Student s1 = new Student();</code></td>
+                </tr>
+                <tr>
+                    <td>Field</td>
+                    <td>Data member of class</td>
+                    <td><code>private String name;</code></td>
+                </tr>
+                <tr>
+                    <td>Method</td>
+                    <td>Behavior of class</td>
+                    <td><code>public void displayInfo()</code></td>
+                </tr>
+                <tr>
+                    <td>Constructor</td>
+                    <td>Special method for initialization</td>
+                    <td><code>public Student(...)</code></td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="concept-section">
+            <h2>Encapsulation</h2>
+            <p>Binding data with methods that operate on that data, restricting direct access.</p>
+            
+            <div class="code-example">
+                <pre><code>public class BankAccount {
+    private double balance;
+    
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+        }
+    }
+    
+    public double getBalance() {
+        return balance;
+    }
+}
+
+BankAccount account = new BankAccount();
+account.deposit(1000);
+double currentBalance = account.getBalance();</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Static Members</h2>
+            <p>Belong to the class rather than any object instance.</p>
+            
+            <div class="code-example">
+                <pre><code>public class Counter {
+    private static int count = 0;
+    
+    public Counter() {
+        count++;
+    }
+    
+    public static int getCount() {
+        return count;
+    }
+}
+
+Counter c1 = new Counter();
+Counter c2 = new Counter();
+int total = Counter.getCount(); // 2</code></pre>
+            </div>
+        </section>
+
+        <div class="nav-buttons">
+            <a href="collections.html" class="nav-button">Previous: Collections</a>
+            <a href="inheritance.html" class="nav-button">Next: Inheritance</a>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA with Java | CodeLearn</title>
+    <link rel="stylesheet" href="../LearnToCode.css">
+    <style>
+        .course-main { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .course-toc { background-color: var(--card-bg); padding: 2rem; border-radius: 8px; margin: 2rem 0; }
+        .course-toc ol { padding-left: 1.5rem; }
+        .course-toc li { margin: 1rem 0; }
+        .course-toc a { color: var(--accent-color); text-decoration: none; font-weight: 500; font-size: 1.1rem; }
+        .course-toc a:hover { text-decoration: underline; }
+        .back-button { display: inline-block; padding: 0.8rem 1.5rem; background-color: var(--accent-color); color: white; text-decoration: none; border-radius: 4px; margin-top: 1rem; }
+        .practice-note { font-style: italic; color: var(--secondary-color); margin-top: 0.5rem; }
+        
+        .video-section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+        }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .video-card {
+            padding: 1rem;
+            background-color: var(--bg-color);
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .video-card:hover {
+            transform: translateY(-3px);
+        }
+        .video-card h3 {
+            margin: 0 0 0.5rem 0;
+            color: var(--accent-color);
+        }
+        .video-card p {
+            margin: 0;
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CodeLearn</div>
+            <ul class="nav-links">
+                <li><a href="../LearnToCode_final.html">Home</a></li>
+                <li><a href="index.html">Java</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="course-main">
+        <h1>Data Structures and Algorithms with Java</h1>
+        
+        <div class="course-toc">
+            <h2>Course Contents</h2>
+            <ol>
+                <li><a href="arrays_dsa.html">Arrays</a></li>
+                <li><a href="linked_lists.html">Linked Lists</a></li>
+                <li><a href="stacks_queues.html">Stacks and Queues</a></li>
+                <li><a href="trees.html">Trees</a></li>
+                <li><a href="graphs.html">Graphs</a></li>
+                <li><a href="greedy_algorithms.html">Greedy Algorithms</a></li>
+                <li><a href="video_trie.html">Trie</a></li>
+            </ol>
+            <p class="practice-note">Each topic includes theory explanations and practice questions.</p>
+        </div>
+
+        <div class="video-section">
+            <h2>Video Lectures</h2>
+            <div class="video-grid">
+                <div class="video-card">
+                    <h3><a href="video_arrays.html">Arrays</a></h3>
+                    <p>Complete array concepts and implementations</p>
+                </div>
+                <div class="video-card">
+                    <h3><a href="video_linked_lists.html">Linked Lists</a></h3>
+                    <p>Detailed linked list operations and algorithms</p>
+                </div>
+                <div class="video-card">
+                    <h3><a href="video_stacks_queues.html">Stacks & Queues</a></h3>
+                    <p>Implementation and applications</p>
+                </div>
+                <div class="video-card">
+                    <h3><a href="video_trees.html">Trees</a></h3>
+                    <p>Binary trees and search trees</p>
+                </div>
+                <div class="video-card">
+                    <h3><a href="video_graphs.html">Graphs</a></h3>
+                    <p>Graph algorithms and traversals</p>
+                </div>
+                <div class="video-card">
+                    <h3><a href="video_greedy_algorithms.html">Greedy Algorithms</a></h3>
+                    <p>Problem solving approaches</p>
+                </div>
+                <div class="video-card">
+                    <h3><a href="video_trie.html">Trie</a></h3>
+                    <p>Trie data structure implementation</p>
+                </div>
+            </div>
+        </div>
+
+        <a href="../LearnToCode_final.html" class="back-button">Back to Courses</a>
+    </main>
+</body>
+</html>

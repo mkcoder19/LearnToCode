@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Collections | CodeLearn</title>
+    <link rel="stylesheet" href="../LearnToCode.css">
+    <style>
+        .concept-page { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .concept-section { margin: 2rem 0; }
+        .code-example { background: #f5f5f5; padding: 1rem; border-radius: 5px; overflow-x: auto; }
+        .collection-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .collection-table th, .collection-table td { border: 1px solid #ddd; padding: 8px; }
+        .collection-table th { background-color: #f2f2f2; }
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 2rem; }
+        .nav-button { padding: 0.8rem 1.5rem; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CodeLearn</div>
+            <ul class="nav-links">
+                <li><a href="../LearnToCode.html">Home</a></li>
+                <li><a href="index.html">Java Course</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="concept-page">
+        <h1>Java Collections Framework</h1>
+        
+        <section class="concept-section">
+            <h2>Core Collection Interfaces</h2>
+            <p>The Collections Framework provides various interfaces and implementations for storing and processing groups of objects.</p>
+            
+            <table class="collection-table">
+                <tr>
+                    <th>Interface</th>
+                    <th>Description</th>
+                    <th>Common Implementations</th>
+                </tr>
+                <tr>
+                    <td>List</td>
+                    <td>Ordered collection (allows duplicates)</td>
+                    <td>ArrayList, LinkedList</td>
+                </tr>
+                <tr>
+                    <td>Set</td>
+                    <td>Collection with no duplicates</td>
+                    <td>HashSet, TreeSet</td>
+                </tr>
+                <tr>
+                    <td>Map</td>
+                    <td>Key-value pairs</td>
+                    <td>HashMap, TreeMap</td>
+                </tr>
+                <tr>
+                    <td>Queue</td>
+                    <td>First-in-first-out (FIFO)</td>
+                    <td>LinkedList, PriorityQueue</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="concept-section">
+            <h2>List Examples</h2>
+            
+            <div class="code-example">
+                <pre><code>// ArrayList example
+List<String> names = new ArrayList<>();
+names.add("Alice");
+names.add("Bob");
+names.add(0, "Charlie"); // Insert at index 0
+
+// LinkedList example
+List<Integer> numbers = new LinkedList<>();
+numbers.add(10);
+numbers.add(20);
+numbers.get(1); // 20</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Set and Map Examples</h2>
+            
+            <div class="code-example">
+                <pre><code>// HashSet example
+Set<String> uniqueNames = new HashSet<>();
+uniqueNames.add("Alice");
+uniqueNames.add("Bob");
+uniqueNames.add("Alice"); // Duplicate ignored
+
+// HashMap example
+Map<String, Integer> ageMap = new HashMap<>();
+ageMap.put("Alice", 25);
+ageMap.put("Bob", 30);
+int aliceAge = ageMap.get("Alice"); // 25</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Common Operations</h2>
+            
+            <div class="code-example">
+                <pre><code>// Iterating through collections
+for (String name : names) {
+    System.out.println(name);
+}
+
+// Sorting a list
+Collections.sort(names);
+
+// Checking contains
+if (uniqueNames.contains("Alice")) {
+    System.out.println("Alice is present");
+}
+
+// Map iteration
+for (Map.Entry<String, Integer> entry : ageMap.entrySet()) {
+    System.out.println(entry.getKey() + ": " + entry.getValue());
+}</code></pre>
+            </div>
+        </section>
+
+        <div class="nav-buttons">
+            <a href="arrays.html" class="nav-button">Previous: Arrays</a>
+            <a href="classes.html" class="nav-button">Next: Classes</a>
+        </div>
+    </main>
+</body>
+</html>

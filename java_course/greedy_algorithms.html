@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greedy Algorithms in DSA | CodeLearn</title>
+    <link rel="stylesheet" href="../LearnToCode.css">
+    <style>
+        .content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .theory {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        .practice {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+        code {
+            background-color: #f5f5f5;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CodeLearn</div>
+            <ul class="nav-links">
+                <li><a href="../LearnToCode_final.html">Home</a></li>
+                <li><a href="dsa_index.html">DSA with Java</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content">
+        <h1>Greedy Algorithms in Data Structures</h1>
+        
+        <div class="theory">
+            <h2>Theory</h2>
+            <p>Greedy algorithms make the locally optimal choice at each stage with the hope of finding a global optimum.</p>
+            
+            <h3>Key Characteristics:</h3>
+            <ul>
+                <li>Make decisions based on current information</li>
+                <li>Do not reconsider previous choices</li>
+                <li>Used in optimization problems</li>
+            </ul>
+
+            <div class="visual">
+                <h3>Greedy Algorithm Example (Coin Change):</h3>
+                <div style="display: flex; justify-content: center; margin: 1rem 0;">
+                    <div style="border: 1px solid #333; padding: 1rem; background: #f8f9fa;">
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                                <div style="border: 1px solid #333; border-radius: 50%; width: 2.5rem; height: 2.5rem; display: flex; justify-content: center; align-items: center;">25</div>
+                                <div style="border: 1px solid #333; border-radius: 50%; width: 2.5rem; height: 2.5rem; display: flex; justify-content: center; align-items: center;">25</div>
+                                <div style="border: 1px solid #333; border-radius: 50%; width: 2.5rem; height: 2.5rem; display: flex; justify-content: center; align-items: center;">25</div>
+                                <div style="border: 1px solid #333; border-radius: 50%; width: 2.5rem; height: 2.5rem; display: flex; justify-content: center; align-items: center;">10</div>
+                                <div style="border: 1px solid #333; border-radius: 50%; width: 2.5rem; height: 2.5rem; display: flex; justify-content: center; align-items: center;">5</div>
+                            </div>
+                            <p style="text-align: center;">Making change for 90 cents: 3 quarters, 1 dime, 1 nickel</p>
+                            <p style="text-align: center; font-style: italic; margin-top: 0.5rem;">At each step, selects largest possible coin</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Types and Java Implementations:</h3>
+            <ul>
+                <li><strong>Coin Change Problem:</strong> Minimum coins for a given amount</li>
+                <li><strong>Fractional Knapsack:</strong> Maximize value with weight constraints</li>
+                <li><strong>Activity Selection:</strong> Maximum non-conflicting activities</li>
+            </ul>
+            
+            <h3>Java Implementations:</h3>
+            <pre><code>// Coin Change Problem
+public static int minCoins(int[] coins, int amount) {
+    Arrays.sort(coins);
+    int count = 0;
+    for (int i = coins.length - 1; i >= 0; i--) {
+        while (amount >= coins[i]) {
+            amount -= coins[i];
+            count++;
+        }
+    }
+    return amount == 0 ? count : -1;
+}
+
+// Fractional Knapsack
+class Item {
+    int value, weight;
+    Item(int v, int w) {
+        value = v;
+        weight = w;
+    }
+}
+
+public static double fractionalKnapsack(int W, Item[] items) {
+    Arrays.sort(items, (a, b) -> 
+        Double.compare((double)b.value/b.weight, (double)a.value/a.weight));
+    
+    double totalValue = 0;
+    for (Item item : items) {
+        if (W >= item.weight) {
+            totalValue += item.value;
+            W -= item.weight;
+        } else {
+            totalValue += W * ((double)item.value/item.weight);
+            break;
+        }
+    }
+    return totalValue;
+}
+
+// Activity Selection
+class Activity {
+    int start, finish;
+    Activity(int s, int f) {
+        start = s;
+        finish = f;
+    }
+}
+
+public static int maxActivities(Activity[] activities) {
+    Arrays.sort(activities, (a, b) -> a.finish - b.finish);
+    int count = 1;
+    int lastFinish = activities[0].finish;
+    
+    for (int i = 1; i < activities.length; i++) {
+        if (activities[i].start >= lastFinish) {
+            count++;
+            lastFinish = activities[i].finish;
+        }
+    }
+    return count;
+}</code></pre>
+        </div>
+
+        <div class="practice">
+            <h2>Practice Problems</h2>
+            <ol>
+                <li>Implement the fractional knapsack problem.</li>
+                <li>Write a function to find the minimum number of coins for a given amount.</li>
+                <li>Schedule jobs to maximize profit using a greedy approach.</li>
+            </ol>
+        </div>
+
+        <a href="dsa_index.html" class="back-button">Back to DSA Course</a>
+    </main>
+</body>
+</html>

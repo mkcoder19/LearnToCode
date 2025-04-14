@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Control Flow | CodeLearn</title>
+    <link rel="stylesheet" href="../LearnToCode.css">
+    <style>
+        .concept-page {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .concept-section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+        }
+        .code-example {
+            background-color: var(--code-bg);
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+        .code-example pre {
+            margin: 0;
+            white-space: pre-wrap;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        .nav-button {
+            padding: 0.8rem 1.5rem;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CodeLearn</div>
+            <ul class="nav-links">
+                <li><a href="../LearnToCode.html">Home</a></li>
+                <li><a href="index.html">Python Course</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="concept-page">
+        <h1>Python Control Flow</h1>
+        
+        <section class="concept-section">
+            <h2>Conditional Statements</h2>
+            <div class="code-example">
+                <h3>If-Else</h3>
+                <pre><code>age = 18
+if age >= 18:
+    print("You are an adult")
+else:
+    print("You are a minor")</code></pre>
+            </div>
+            <div class="code-example">
+                <h3>Elif</h3>
+                <pre><code>score = 85
+if score >= 90:
+    grade = 'A'
+elif score >= 80:
+    grade = 'B'
+elif score >= 70:
+    grade = 'C'
+else:
+    grade = 'D'</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Loops</h2>
+            <div class="code-example">
+                <h3>For Loop</h3>
+                <pre><code># Iterate through a list
+fruits = ['apple', 'banana', 'cherry']
+for fruit in fruits:
+    print(fruit)
+
+# Using range
+for i in range(5):  # 0 to 4
+    print(i)</code></pre>
+            </div>
+            <div class="code-example">
+                <h3>While Loop</h3>
+                <pre><code>count = 0
+while count < 5:
+    print(count)
+    count += 1</code></pre>
+            </div>
+        </section>
+
+        <div class="nav-buttons">
+            <a href="operators.html" class="nav-button">← Previous: Operators</a>
+            <a href="functions.html" class="nav-button">Next: Functions →</a>
+        </div>
+    </main>
+</body>
+</html>

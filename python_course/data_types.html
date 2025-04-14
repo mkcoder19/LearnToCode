@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Data Types | CodeLearn</title>
+    <link rel="stylesheet" href="../LearnToCode.css">
+    <style>
+        .concept-page {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .concept-section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+        }
+        .code-example {
+            background-color: var(--code-bg);
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+        .code-example pre {
+            margin: 0;
+            white-space: pre-wrap;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        .nav-button {
+            padding: 0.8rem 1.5rem;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CodeLearn</div>
+            <ul class="nav-links">
+                <li><a href="../LearnToCode.html">Home</a></li>
+                <li><a href="index.html">Python Course</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="concept-page">
+        <h1>Python Data Types</h1>
+        
+        <section class="concept-section">
+            <h2>Basic Data Types</h2>
+            <p>Python has several built-in data types:</p>
+            
+            <div class="code-example">
+                <h3>Numbers</h3>
+                <pre><code># Integers
+age = 25
+temperature = -10
+
+# Floating point numbers
+price = 19.99
+pi = 3.14159
+
+# Complex numbers
+complex_num = 3 + 4j</code></pre>
+            </div>
+
+            <div class="code-example">
+                <h3>Strings</h3>
+                <pre><code>name = "Alice"
+message = 'Hello, World!'
+multiline = """This is a
+multi-line string"""</code></pre>
+            </div>
+
+            <div class="code-example">
+                <h3>Booleans</h3>
+                <pre><code>is_active = True
+is_admin = False</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Type Conversion</h2>
+            <p>You can convert between different types:</p>
+            <div class="code-example">
+                <pre><code># String to integer
+num_str = "123"
+num_int = int(num_str)
+
+# Integer to float
+int_num = 5
+float_num = float(int_num)
+
+# Float to string
+pi = 3.14159
+pi_str = str(pi)</code></pre>
+            </div>
+        </section>
+
+        <div class="nav-buttons">
+            <a href="index.html" class="nav-button">Back to Course</a>
+            <a href="operators.html" class="nav-button">Next: Operators →</a>
+        </div>
+    </main>
+</body>
+</html>

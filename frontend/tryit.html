@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try It Yourself - CodeLearn</title>
+    <link rel="stylesheet" href="LearnToCode.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .editor { height: 300px; }
+        .output { background-color: #f4f4f4; padding: 1rem; border-radius: 8px; margin-top: 1rem; }
+        .loader { text-align: center; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CodeLearn</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="../python_course/index.html">Python</a></li>
+                <li><a href="../java_course/index.html">Java</a></li>
+                <li><a href="../cpp_course/index.html">C++</a></li>
+                <li><a href="../javascript_course/index.html">JavaScript</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Try It Yourself</h1>
+        <div>
+            <select id="language">
+                <option value="python">Python</option>
+                <option value="javascript">JavaScript</option>
+                <option value="java">Java</option>
+                <option value="cpp">C++</option>
+            </select>
+            <button id="run-btn">Run Code</button>
+        </div>
+        <div id="editor" class="editor"></div>
+        <div id="output" class="output"></div>
+
+        <script src="js/compiler.js"></script>
+    </main>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stacks & Queues in DSA | CodeLearn</title>
+    <link rel="stylesheet" href="../LearnToCode.css">
+    <style>
+        .content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .theory {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        .practice {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+        code {
+            background-color: #f5f5f5;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CodeLearn</div>
+            <ul class="nav-links">
+                <li><a href="../LearnToCode_final.html">Home</a></li>
+                <li><a href="dsa_index.html">DSA with Java</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content">
+        <h1>Stacks & Queues in Data Structures</h1>
+        
+        <div class="theory">
+            <h2>Theory</h2>
+            <p>Stacks and Queues are fundamental linear data structures with specific insertion and removal patterns.</p>
+            
+            <h3>Stack (LIFO):</h3>
+            <ul>
+                <li>Last In First Out principle</li>
+                <li>Operations: push(), pop(), peek()</li>
+                <li>Used in function calls, undo operations</li>
+            </ul>
+
+            <h3>Queue (FIFO):</h3>
+            <ul>
+                <li>First In First Out principle</li>
+                <li>Operations: enqueue(), dequeue(), peek()</li>
+                <li>Used in scheduling, buffering</li>
+            </ul>
+
+            <div class="visual">
+                <h3>Stack Visualization:</h3>
+                <div style="display: flex; justify-content: center; margin: 1rem 0;">
+                    <div style="border: 1px solid #333; padding: 1rem; background: #f8f9fa;">
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <div style="border: 1px solid #333; padding: 0.5rem; min-width: 3rem; text-align: center;">Top</div>
+                            <div style="border: 1px solid #333; padding: 0.5rem; min-width: 3rem; text-align: center;">10</div>
+                            <div style="border: 1px solid #333; padding: 0.5rem; min-width: 3rem; text-align: center;">20</div>
+                            <div style="border: 1px solid #333; padding: 0.5rem; min-width: 3rem; text-align: center;">30</div>
+                            <div style="border: 1px solid #333; padding: 0.5rem; min-width: 3rem; text-align: center;">Bottom</div>
+                        </div>
+                        <p style="text-align: center; margin-top: 0.5rem;">LIFO Structure</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="visual">
+                <h3>Queue Visualization:</h3>
+                <div style="display: flex; justify-content: center; margin: 1rem 0;">
+                    <div style="border: 1px solid #333; padding: 1rem; background: #f8f9fa;">
+                        <div style="display: flex; align-items: center;">
+                            <div style="border: 1px solid #333; padding: 0.5rem; min-width: 3rem; text-align: center;">Front</div>
+                            <div style="font-size: 1.5rem;">→</div>
+                            <div style="border: 1px solid #333; padding: 0.5rem; min-width: 3rem; text-align: center;">10</div>
+                            <div style="font-size: 1.5rem;">→</div>
+                            <div style="border: 1px solid #333; padding: 0.5rem; min-width: 3rem; text-align: center;">20</div>
+                            <div style="font-size: 1.5rem;">→</div>
+                            <div style="border: 1px solid #333; padding: 0.5rem; min-width: 3rem; text-align: center;">30</div>
+                            <div style="font-size: 1.5rem;">→</div>
+                            <div style="border: 1px solid #333; padding: 0.5rem; min-width: 3rem; text-align: center;">Rear</div>
+                        </div>
+                        <p style="text-align: center; margin-top: 0.5rem;">FIFO Structure</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Types and Java Implementation:</h3>
+            <ul>
+                <li><strong>Stack Implementations:</strong> Array, LinkedList</li>
+                <li><strong>Queue Types:</strong> Simple, Circular, Priority</li>
+                <li><strong>Deque:</strong> Double-ended queue</li>
+            </ul>
+            
+            <pre><code>// Stack using Array
+class ArrayStack {
+    int[] arr;
+    int top;
+    ArrayStack(int size) {
+        arr = new int[size];
+        top = -1;
+    }
+    void push(int val) { arr[++top] = val; }
+    int pop() { return arr[top--]; }
+}
+
+// Queue using LinkedList
+class ListQueue {
+    Node front, rear;
+    class Node {
+        int data;
+        Node next;
+        Node(int data) { this.data = data; }
+    }
+    void enqueue(int val) {
+        Node newNode = new Node(val);
+        if (rear == null) {
+            front = rear = newNode;
+        } else {
+            rear.next = newNode;
+            rear = newNode;
+        }
+    }
+    int dequeue() {
+        if (front == null) return -1;
+        int val = front.data;
+        front = front.next;
+        if (front == null) rear = null;
+        return val;
+    }
+}
+
+// Using Java Collections
+Deque<Integer> deque = new ArrayDeque<>();
+deque.addFirst(1);  // Stack operation
+deque.addLast(2);   // Queue operation</code></pre>
+        </div>
+
+        <div class="practice">
+            <h2>Practice Problems</h2>
+            <ol>
+                <li>Implement a stack using arrays.</li>
+                <li>Check for balanced parentheses using a stack.</li>
+                <li>Implement a queue using two stacks.</li>
+            </ol>
+        </div>
+
+        <a href="dsa_index.html" class="back-button">Back to DSA Course</a>
+    </main>
+</body>
+</html>

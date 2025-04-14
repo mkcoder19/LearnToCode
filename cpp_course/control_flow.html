@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Control Flow | CodeLearn</title>
+    <link rel="stylesheet" href="../LearnToCode.css">
+    <style>
+        .concept-page { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .concept-section { margin: 2rem 0; }
+        .code-example { background: #f5f5f5; padding: 1rem; border-radius: 5px; overflow-x: auto; }
+        .flow-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .flow-table th, .flow-table td { border: 1px solid #ddd; padding: 8px; }
+        .flow-table th { background-color: #f2f2f2; }
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 2rem; }
+        .nav-button { padding: 0.8rem 1.5rem; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CodeLearn</div>
+            <ul class="nav-links">
+                <li><a href="../LearnToCode.html">Home</a></li>
+                <li><a href="index.html">C++ Course</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="concept-page">
+        <h1>C++ Control Flow Statements</h1>
+        
+        <section class="concept-section">
+            <h2>Conditional Statements</h2>
+            
+            <h3>If-Else Statement</h3>
+            <div class="code-example">
+                <pre><code>int age = 18;
+
+if (age >= 18) {
+    cout << "You are an adult";
+} else {
+    cout << "You are a minor";
+}</code></pre>
+            </div>
+
+            <h3>Switch Statement</h3>
+            <div class="code-example">
+                <pre><code>int day = 3;
+switch (day) {
+    case 1: cout << "Monday"; break;
+    case 2: cout << "Tuesday"; break;
+    case 3: cout << "Wednesday"; break;
+    default: cout << "Invalid day";
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Looping Statements</h2>
+            
+            <h3>While Loop</h3>
+            <div class="code-example">
+                <pre><code>int count = 1;
+while (count <= 5) {
+    cout << "Count: " << count << endl;
+    count++;
+}</code></pre>
+            </div>
+
+            <h3>For Loop</h3>
+            <div class="code-example">
+                <pre><code>for (int i = 0; i < 5; i++) {
+    cout << "Iteration: " << i << endl;
+}</code></pre>
+            </div>
+
+            <h3>Range-based For Loop (C++11)</h3>
+            <div class="code-example">
+                <pre><code>int numbers[] = {1, 2, 3, 4, 5};
+for (int num : numbers) {
+    cout << num << " ";
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Control Transfer Statements</h2>
+            
+            <div class="code-example">
+                <pre><code>// Break example
+for (int i = 0; i < 10; i++) {
+    if (i == 5) {
+        break; // exits the loop
+    }
+    cout << i << " ";
+}
+
+// Continue example
+for (int i = 0; i < 10; i++) {
+    if (i % 2 == 0) {
+        continue; // skips even numbers
+    }
+    cout << i << " ";
+}</code></pre>
+            </div>
+        </section>
+
+        <div class="nav-buttons">
+            <a href="operators.html" class="nav-button">Previous: Operators</a>
+            <a href="functions.html" class="nav-button">Next: Functions</a>
+        </div>
+    </main>
+</body>
+</html>

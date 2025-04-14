@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Arrays | CodeLearn</title>
+    <link rel="stylesheet" href="../LearnToCode.css">
+    <style>
+        .concept-page { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .concept-section { margin: 2rem 0; }
+        .code-example { background: #f5f5f5; padding: 1rem; border-radius: 5px; overflow-x: auto; }
+        .array-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .array-table th, .array-table td { border: 1px solid #ddd; padding: 8px; }
+        .array-table th { background-color: #f2f2f2; }
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 2rem; }
+        .nav-button { padding: 0.8rem 1.5rem; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CodeLearn</div>
+            <ul class="nav-links">
+                <li><a href="../LearnToCode.html">Home</a></li>
+                <li><a href="index.html">C++ Course</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="concept-page">
+        <h1>C++ Arrays and Vectors</h1>
+        
+        <section class="concept-section">
+            <h2>C-Style Arrays</h2>
+            <p>Traditional fixed-size arrays inherited from C:</p>
+            
+            <div class="code-example">
+                <pre><code>// Array declaration and initialization
+int numbers[5]; // Uninitialized array of 5 integers
+int primes[] = {2, 3, 5, 7, 11}; // Initialized array
+
+// Accessing elements
+numbers[0] = 10; // First element
+int firstPrime = primes[0]; // 2
+
+// Size calculation
+int size = sizeof(primes) / sizeof(primes[0]); // 5
+
+// Looping through array
+for (int i = 0; i < size; i++) {
+    cout << primes[i] << " ";
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>std::array (C++11)</h2>
+            <p>Safer, more modern alternative to C-style arrays:</p>
+            
+            <div class="code-example">
+                <pre><code>#include <array>
+
+// Declaration
+std::array<int, 5> numbers;
+
+// Initialization
+std::array<int, 5> primes = {2, 3, 5, 7, 11};
+
+// Accessing elements
+numbers[0] = 10;
+int firstPrime = primes.at(0); // Bounds-checked access
+
+// Useful methods
+int size = primes.size(); // 5
+bool empty = primes.empty(); // false
+primes.fill(0); // Fill all elements with 0</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Multidimensional Arrays</h2>
+            
+            <div class="code-example">
+                <pre><code>// 2D C-style array
+int matrix[3][3] = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};
+
+// Accessing elements
+int center = matrix[1][1]; // 5
+
+// 2D std::array
+std::array<std::array<int, 3>, 3> modernMatrix = {{
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+}};
+
+// Range-based for loop (C++11)
+for (const auto &row : modernMatrix) {
+    for (int num : row) {
+        cout << num << " ";
+    }
+    cout << endl;
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Array Limitations and Alternatives</h2>
+            <p>For dynamic sizing, consider std::vector:</p>
+            
+            <div class="code-example">
+                <pre><code>#include <vector>
+
+// Vector declaration
+std::vector<int> dynamicArray;
+
+// Adding elements
+dynamicArray.push_back(10);
+dynamicArray.push_back(20);
+dynamicArray.push_back(30);
+
+// Accessing elements
+int first = dynamicArray[0]; // 10
+int last = dynamicArray.back(); // 30
+
+// Size management
+int size = dynamicArray.size(); // 3
+dynamicArray.resize(5); // Now has 5 elements
+dynamicArray.shrink_to_fit(); // Reduce capacity</code></pre>
+            </div>
+        </section>
+
+        <div class="nav-buttons">
+            <a href="functions.html" class="nav-button">Previous: Functions</a>
+            <a href="pointers.html" class="nav-button">Next: Pointers</a>
+        </div>
+    </main>
+</body>
+</html>

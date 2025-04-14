@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous JavaScript | CodeLearn</title>
+    <link rel="stylesheet" href="../LearnToCode.css">
+    <style>
+        .concept-page { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .concept-section { margin: 2rem 0; }
+        .code-example { background: #f5f5f5; padding: 1rem; border-radius: 5px; overflow-x: auto; }
+        .async-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .async-table th, .async-table td { border: 1px solid #ddd; padding: 8px; }
+        .async-table th { background-color: #f2f2f2; }
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 2rem; }
+        .nav-button { padding: 0.8rem 1.5rem; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CodeLearn</div>
+            <ul class="nav-links">
+                <li><a href="../LearnToCode.html">Home</a></li>
+                <li><a href="index.html">JavaScript Course</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="concept-page">
+        <h1>Asynchronous JavaScript</h1>
+        
+        <section class="concept-section">
+            <h2>Callbacks</h2>
+            <p>The traditional approach to handling async operations:</p>
+            
+            <div class="code-example">
+                <pre><code>function fetchData(callback) {
+    setTimeout(() => {
+        callback('Data received');
+    }, 1000);
+}
+
+fetchData((data) => {
+    console.log(data); // "Data received" after 1 second
+});</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Promises</h2>
+            <p>A cleaner way to handle asynchronous operations:</p>
+            
+            <div class="code-example">
+                <pre><code>function fetchData() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Data received');
+            // or reject('Error occurred');
+        }, 1000);
+    });
+}
+
+fetchData()
+    .then(data => console.log(data))
+    .catch(error => console.error(error));</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Async/Await</h2>
+            <p>Syntactic sugar for working with promises:</p>
+            
+            <div class="code-example">
+                <pre><code>async function getData() {
+    try {
+        const data = await fetchData();
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+getData();</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Fetch API</h2>
+            <p>Modern way to make HTTP requests:</p>
+            
+            <div class="code-example">
+                <pre><code>async function getUser() {
+    const response = await fetch('https://api.example.com/users/1');
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    return response.json();
+}
+
+getUser()
+    .then(user => console.log(user))
+    .catch(error => console.error('Error:', error));</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Error Handling</h2>
+            <p>Strategies for managing async errors:</p>
+            
+            <div class="code-example">
+                <pre><code>// With Promises
+fetchData()
+    .then(data => processData(data))
+    .catch(error => handleError(error))
+    .finally(() => cleanUp());
+
+// With Async/Await
+async function process() {
+    try {
+        const data = await fetchData();
+        const result = await processData(data);
+        return result;
+    } catch (error) {
+        handleError(error);
+    } finally {
+        cleanUp();
+    }
+}</code></pre>
+            </div>
+        </section>
+
+        <div class="nav-buttons">
+            <a href="es6.html" class="nav-button">Previous: Modern JavaScript</a>
+            <a href="index.html" class="nav-button">Back to Course</a>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern JavaScript (ES6+) | CodeLearn</title>
+    <link rel="stylesheet" href="../LearnToCode.css">
+    <style>
+        .concept-page { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .concept-section { margin: 2rem 0; }
+        .code-example { background: #f5f5f5; padding: 1rem; border-radius: 5px; overflow-x: auto; }
+        .es6-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .es6-table th, .es6-table td { border: 1px solid #ddd; padding: 8px; }
+        .es6-table th { background-color: #f2f2f2; }
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 2rem; }
+        .nav-button { padding: 0.8rem 1.5rem; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CodeLearn</div>
+            <ul class="nav-links">
+                <li><a href="../LearnToCode.html">Home</a></li>
+                <li><a href="index.html">JavaScript Course</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="concept-page">
+        <h1>Modern JavaScript (ES6+)</h1>
+        
+        <section class="concept-section">
+            <h2>Block-Scoped Declarations</h2>
+            <p>ES6 introduced <code>let</code> and <code>const</code> for better variable scoping:</p>
+            
+            <div class="code-example">
+                <pre><code>// let allows reassignment
+let counter = 0;
+counter = 1; // Valid
+
+// const prevents reassignment
+const MAX_SIZE = 100;
+// MAX_SIZE = 200; // Error!
+
+// Block scoping
+if (true) {
+    let localVar = 'only visible in this block';
+    const LOCAL_CONST = 'also block-scoped';
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Arrow Functions</h2>
+            <p>Concise syntax and lexical <code>this</code> binding:</p>
+            
+            <div class="code-example">
+                <pre><code>// Traditional function
+function add(a, b) {
+    return a + b;
+}
+
+// Arrow function equivalent
+const add = (a, b) => a + b;
+
+// With single parameter
+const square = x => x * x;
+
+// With body block
+const greet = name => {
+    const message = `Hello, ${name}!`;
+    return message;
+};</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Template Literals</h2>
+            <p>Multi-line strings and expression interpolation:</p>
+            
+            <div class="code-example">
+                <pre><code>const name = 'Alice';
+const age = 25;
+
+// String interpolation
+const message = `Hello ${name}, you are ${age} years old!`;
+
+// Multi-line strings
+const html = `
+<div>
+    <h1>${name}</h1>
+    <p>Age: ${age}</p>
+</div>
+`;</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Destructuring Assignment</h2>
+            <p>Unpack values from arrays or objects:</p>
+            
+            <div class="code-example">
+                <pre><code>// Array destructuring
+const [first, second] = [1, 2, 3];
+
+// Object destructuring
+const person = { name: 'Bob', age: 30 };
+const { name, age } = person;
+
+// Function parameter destructuring
+function greet({ name, age }) {
+    return `Hello ${name}, age ${age}`;
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Spread and Rest Operators</h2>
+            
+            <div class="code-example">
+                <pre><code>// Spread operator (...)
+const numbers = [1, 2, 3];
+const newNumbers = [...numbers, 4, 5]; // [1, 2, 3, 4, 5]
+
+// Rest parameters
+function sum(...nums) {
+    return nums.reduce((total, num) => total + num, 0);
+}
+sum(1, 2, 3); // 6</code></pre>
+            </div>
+        </section>
+
+        <div class="nav-buttons">
+            <a href="events.html" class="nav-button">Previous: Events</a>
+            <a href="async.html" class="nav-button">Next: Asynchronous JS</a>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphs in DSA | CodeLearn</title>
+    <link rel="stylesheet" href="../LearnToCode.css">
+    <style>
+        .content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .theory {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        .practice {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+        code {
+            background-color: #f5f5f5;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CodeLearn</div>
+            <ul class="nav-links">
+                <li><a href="../LearnToCode_final.html">Home</a></li>
+                <li><a href="dsa_index.html">DSA with Java</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content">
+        <h1>Graphs in Data Structures</h1>
+        
+        <div class="theory">
+            <h2>Theory</h2>
+            <p>Graphs are non-linear data structures consisting of nodes (vertices) connected by edges.</p>
+            
+            <h3>Key Characteristics:</h3>
+            <ul>
+                <li>Vertices (nodes) and edges (connections)</li>
+                <li>Can be directed or undirected</li>
+                <li>Used in social networks, maps, routing</li>
+            </ul>
+
+            <div class="visual">
+                <h3>Graph Visualization:</h3>
+                <div style="display: flex; justify-content: center; margin: 1rem 0;">
+                    <div style="border: 1px solid #333; padding: 1rem; background: #f8f9fa;">
+                        <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                            <div style="border: 1px solid #333; border-radius: 50%; width: 3rem; height: 3rem; display: flex; justify-content: center; align-items: center;">A</div>
+                            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                                <div style="display: flex; gap: 1rem;">
+                                    <div style="border: 1px solid #333; border-radius: 50%; width: 3rem; height: 3rem; display: flex; justify-content: center; align-items: center;">B</div>
+                                    <div style="border: 1px solid #333; border-radius: 50%; width: 3rem; height: 3rem; display: flex; justify-content: center; align-items: center;">C</div>
+                                </div>
+                                <div style="display: flex; gap: 1rem;">
+                                    <div style="border: 1px solid #333; border-radius: 50%; width: 3rem; height: 3rem; display: flex; justify-content: center; align-items: center;">D</div>
+                                    <div style="border: 1px solid #333; border-radius: 50%; width: 3rem; height: 3rem; display: flex; justify-content: center; align-items: center;">E</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="position: relative; height: 0; width: 100%;">
+                            <div style="position: absolute; width: 2rem; height: 2px; background: #333; top: -4rem; left: 3.5rem; transform: rotate(45deg);"></div>
+                            <div style="position: absolute; width: 2rem; height: 2px; background: #333; top: -4rem; left: 6.5rem; transform: rotate(-45deg);"></div>
+                            <div style="position: absolute; width: 2rem; height: 2px; background: #333; top: -2rem; left: 3.5rem;"></div>
+                            <div style="position: absolute; width: 2rem; height: 2px; background: #333; top: -2rem; left: 6.5rem;"></div>
+                            <div style="position: absolute; width: 2rem; height: 2px; background: #333; top: 0; left: 3.5rem; transform: rotate(-45deg);"></div>
+                            <div style="position: absolute; width: 2rem; height: 2px; background: #333; top: 0; left: 6.5rem; transform: rotate(45deg);"></div>
+                        </div>
+                        <p style="text-align: center; margin-top: 0.5rem;">Nodes connected by edges (A connected to B, C, D, E)</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Types and Java Implementation:</h3>
+            <ul>
+                <li><strong>Adjacency List:</strong> Efficient for sparse graphs</li>
+                <li><strong>Adjacency Matrix:</strong> Suitable for dense graphs</li>
+                <li><strong>Edge List:</strong> Simple but less efficient</li>
+            </ul>
+            
+            <h3>Java Implementations:</h3>
+            <pre><code>import java.util.*;
+
+// Adjacency List Implementation
+class Graph {
+    private Map<Integer, List<Integer>> adjList;
+    
+    public Graph() {
+        adjList = new HashMap<>();
+    }
+    
+    public void addEdge(int u, int v) {
+        adjList.computeIfAbsent(u, k -> new ArrayList<>()).add(v);
+        adjList.computeIfAbsent(v, k -> new ArrayList<>()).add(u); // For undirected graph
+    }
+
+    public void printGraph() {
+        for (Map.Entry<Integer, List<Integer>> entry : adjList.entrySet()) {
+            System.out.print(entry.getKey() + ": ");
+            for (int neighbor : entry.getValue()) {
+                System.out.print(neighbor + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+// Adjacency Matrix Implementation
+class AdjacencyMatrixGraph {
+    private int[][] matrix;
+    private int size;
+
+    public AdjacencyMatrixGraph(int size) {
+        this.size = size;
+        matrix = new int[size][size];
+    }
+
+    public void addEdge(int u, int v) {
+        matrix[u][v] = 1; // For directed graph
+        matrix[v][u] = 1; // For undirected graph
+    }
+
+    public void printMatrix() {
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}</code></pre>
+        </div>
+
+        <div class="practice">
+            <h2>Practice Problems</h2>
+            <ol>
+                <li>Implement a graph using adjacency list.</li>
+                <li>Write a function for breadth-first search (BFS).</li>
+                <li>Find if a path exists between two nodes.</li>
+            </ol>
+        </div>
+
+        <a href="dsa_index.html" class="back-button">Back to DSA Course</a>
+    </main>
+</body>
+</html>
