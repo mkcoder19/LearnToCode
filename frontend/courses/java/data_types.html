@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Data Types | CodeLearn</title>
+    <link rel="stylesheet" href="../LearnToCode.css">
+    <style>
+        .concept-page { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .concept-section { margin: 2rem 0; }
+        .code-example { background: #f5f5f5; padding: 1rem; border-radius: 5px; overflow-x: auto; }
+        .type-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .type-table th, .type-table td { border: 1px solid #ddd; padding: 8px; }
+        .type-table th { background-color: #f2f2f2; }
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 2rem; }
+        .nav-button { padding: 0.8rem 1.5rem; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CodeLearn</div>
+            <ul class="nav-links">
+                <li><a href="../LearnToCode.html">Home</a></li>
+                <li><a href="index.html">Java Course</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="concept-page">
+        <h1>Java Data Types</h1>
+        
+        <section class="concept-section">
+            <h2>Primitive Data Types</h2>
+            <p>Java has 8 primitive data types that form the building blocks of Java programs:</p>
+            
+            <table class="type-table">
+                <tr>
+                    <th>Type</th>
+                    <th>Size</th>
+                    <th>Range</th>
+                    <th>Default</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td>byte</td>
+                    <td>8-bit</td>
+                    <td>-128 to 127</td>
+                    <td>0</td>
+                    <td><code>byte b = 100;</code></td>
+                </tr>
+                <tr>
+                    <td>short</td>
+                    <td>16-bit</td>
+                    <td>-32,768 to 32,767</td>
+                    <td>0</td>
+                    <td><code>short s = 10000;</code></td>
+                </tr>
+                <tr>
+                    <td>int</td>
+                    <td>32-bit</td>
+                    <td>-2<sup>31</sup> to 2<sup>31</sup>-1</td>
+                    <td>0</td>
+                    <td><code>int i = 100000;</code></td>
+                </tr>
+                <tr>
+                    <td>long</td>
+                    <td>64-bit</td>
+                    <td>-2<sup>63</sup> to 2<sup>63</sup>-1</td>
+                    <td>0L</td>
+                    <td><code>long l = 10000000000L;</code></td>
+                </tr>
+                <tr>
+                    <td>float</td>
+                    <td>32-bit</td>
+                    <td>±1.4E-45 to ±3.4E+38</td>
+                    <td>0.0f</td>
+                    <td><code>float f = 3.14f;</code></td>
+                </tr>
+                <tr>
+                    <td>double</td>
+                    <td>64-bit</td>
+                    <td>±4.9E-324 to ±1.7E+308</td>
+                    <td>0.0d</td>
+                    <td><code>double d = 3.1415926535;</code></td>
+                </tr>
+                <tr>
+                    <td>char</td>
+                    <td>16-bit</td>
+                    <td>'\u0000' to '\uffff'</td>
+                    <td>'\u0000'</td>
+                    <td><code>char c = 'A';</code></td>
+                </tr>
+                <tr>
+                    <td>boolean</td>
+                    <td>1-bit</td>
+                    <td>true/false</td>
+                    <td>false</td>
+                    <td><code>boolean flag = true;</code></td>
+                </tr>
+            </table>
+
+            <div class="code-example">
+                <h3>Practical Examples</h3>
+                <pre><code>// Temperature measurement
+byte currentTemp = 25;  // -128 to 127 range sufficient
+
+// Student grade calculation
+float averageGrade = 89.5f;
+
+// Large calculations
+double preciseValue = 2.718281828459045;
+
+// Character handling
+char gradeLetter = 'A';
+
+// Status flags
+boolean isPassing = true;</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Reference Data Types</h2>
+            <p>Java also has reference types that store references to objects:</p>
+            
+            <div class="code-example">
+                <pre><code>// String - sequence of characters
+String name = "John Doe";
+
+// Arrays - collections of elements
+int[] numbers = {1, 2, 3, 4, 5};
+
+// Classes - custom types
+class Student {
+    String name;
+    int age;
+}
+Student s1 = new Student();</code></pre>
+            </div>
+            
+            <h3>Type Conversion Examples</h3>
+            <div class="code-example">
+                <pre><code>// Widening conversion (automatic)
+int myInt = 9;
+double myDouble = myInt;  // Automatic: int → double
+
+// Narrowing conversion (manual)
+double myDouble = 9.78;
+int myInt = (int) myDouble;  // Manual: double → int
+
+// String conversion
+String str = "123";
+int num = Integer.parseInt(str);</code></pre>
+            </div>
+        </section>
+
+        <div class="nav-buttons">
+            <a href="index.html" class="nav-button">Back to Course</a>
+            <a href="operators.html" class="nav-button">Next: Operators</a>
+        </div>
+    </main>
+</body>
+</html>

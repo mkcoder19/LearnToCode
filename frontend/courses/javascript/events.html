@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Events | CodeLearn</title>
+    <link rel="stylesheet" href="../LearnToCode.css">
+    <style>
+        .concept-page { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .concept-section { margin: 2rem 0; }
+        .code-example { background: #f5f5f5; padding: 1rem; border-radius: 5px; overflow-x: auto; }
+        .event-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .event-table th, .event-table td { border: 1px solid #ddd; padding: 8px; }
+        .event-table th { background-color: #f2f2f2; }
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 2rem; }
+        .nav-button { padding: 0.8rem 1.5rem; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px; }
+        .demo-box { 
+            border: 1px solid #ddd; 
+            padding: 1rem; 
+            margin: 1rem 0; 
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .demo-box:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CodeLearn</div>
+            <ul class="nav-links">
+                <li><a href="../LearnToCode.html">Home</a></li>
+                <li><a href="index.html">JavaScript Course</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="concept-page">
+        <h1>JavaScript Events</h1>
+        
+        <section class="concept-section">
+            <h2>Event Listeners</h2>
+            <p>Responding to user interactions with event listeners:</p>
+            
+            <div class="code-example">
+                <pre><code>// Basic click event
+const button = document.querySelector('#myButton');
+button.addEventListener('click', function() {
+    console.log('Button was clicked!');
+});
+
+// With arrow function
+button.addEventListener('click', () => {
+    console.log('Button clicked (arrow function)');
+});</code></pre>
+            </div>
+            
+            <div id="clickDemo" class="demo-box">
+                Click me to see console output!
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Common Event Types</h2>
+            <table class="event-table">
+                <tr>
+                    <th>Event</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td>click</td>
+                    <td>Mouse click</td>
+                    <td><code>element.addEventListener('click', handler)</code></td>
+                </tr>
+                <tr>
+                    <td>mouseover</td>
+                    <td>Mouse enters element</td>
+                    <td><code>element.addEventListener('mouseover', handler)</code></td>
+                </tr>
+                <tr>
+                    <td>keydown</td>
+                    <td>Keyboard key pressed</td>
+                    <td><code>document.addEventListener('keydown', handler)</code></td>
+                </tr>
+                <tr>
+                    <td>submit</td>
+                    <td>Form submission</td>
+                    <td><code>form.addEventListener('submit', handler)</code></td>
+                </tr>
+                <tr>
+                    <td>load</td>
+                    <td>Page finished loading</td>
+                    <td><code>window.addEventListener('load', handler)</code></td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="concept-section">
+            <h2>Event Object</h2>
+            <p>The event object contains information about the event:</p>
+            
+            <div class="code-example">
+                <pre><code>document.addEventListener('click', function(event) {
+    console.log('Clicked at:', event.clientX, event.clientY);
+    console.log('Target element:', event.target);
+    event.preventDefault(); // Prevent default behavior
+    event.stopPropagation(); // Stop event bubbling
+});</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Event Delegation</h2>
+            <p>Efficiently handle events for multiple elements:</p>
+            
+            <div class="code-example">
+                <pre><code>// Instead of adding listeners to each button
+document.querySelector('.button-container').addEventListener('click', function(event) {
+    if (event.target.classList.contains('btn')) {
+        console.log('Button clicked:', event.target.textContent);
+    }
+});</code></pre>
+            </div>
+        </section>
+
+        <div class="nav-buttons">
+            <a href="dom.html" class="nav-button">Previous: DOM Manipulation</a>
+            <a href="es6.html" class="nav-button">Next: Modern JavaScript</a>
+        </div>
+    </main>
+
+    <script>
+        // Demo event listener
+        document.querySelector('#clickDemo').addEventListener('click', function() {
+            console.log('Demo box was clicked!');
+            this.textContent = 'Clicked! Check your console.';
+            this.style.backgroundColor = '#e0f7fa';
+        });
+    </script>
+</body>
+</html>

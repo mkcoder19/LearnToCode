@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ OOP | CodeLearn</title>
+    <link rel="stylesheet" href="../LearnToCode.css">
+    <style>
+        .concept-page { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .concept-section { margin: 2rem 0; }
+        .code-example { background: #f5f5f5; padding: 1rem; border-radius: 5px; overflow-x: auto; }
+        .oop-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .oop-table th, .oop-table td { border: 1px solid #ddd; padding: 8px; }
+        .oop-table th { background-color: #f2f2f2; }
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 2rem; }
+        .nav-button { padding: 0.8rem 1.5rem; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CodeLearn</div>
+            <ul class="nav-links">
+                <li><a href="../LearnToCode.html">Home</a></li>
+                <li><a href="index.html">C++ Course</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="concept-page">
+        <h1>C++ Object-Oriented Programming</h1>
+        
+        <section class="concept-section">
+            <h2>Classes and Objects</h2>
+            <p>Classes are user-defined types that encapsulate data and functions.</p>
+            
+            <div class="code-example">
+                <pre><code>class Rectangle {
+private:
+    double width;
+    double height;
+    
+public:
+    // Constructor
+    Rectangle(double w, double h) : width(w), height(h) {}
+    
+    // Member function
+    double area() {
+        return width * height;
+    }
+    
+    // Setter
+    void setWidth(double w) {
+        width = w;
+    }
+};
+
+// Creating objects
+Rectangle rect(5.0, 3.0);
+cout << "Area: " << rect.area(); // 15.0</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Inheritance</h2>
+            <p>Derived classes inherit properties and behaviors from base classes.</p>
+            
+            <div class="code-example">
+                <pre><code>class Shape {
+protected:
+    string color;
+    
+public:
+    Shape(string c) : color(c) {}
+    virtual double area() = 0; // Pure virtual function
+};
+
+class Circle : public Shape {
+    double radius;
+    
+public:
+    Circle(string c, double r) : Shape(c), radius(r) {}
+    
+    double area() override {
+        return 3.14159 * radius * radius;
+    }
+};
+
+Circle circle("Red", 5.0);
+cout << "Area: " << circle.area();</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Polymorphism</h2>
+            <p>Objects can take many forms through inheritance and virtual functions.</p>
+            
+            <div class="code-example">
+                <pre><code>Shape* shapes[2];
+shapes[0] = new Circle("Red", 5.0);
+shapes[1] = new Rectangle("Blue", 4.0, 6.0);
+
+for (int i = 0; i < 2; i++) {
+    cout << "Area: " << shapes[i]->area() << endl;
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Encapsulation</h2>
+            <p>Bundling data with methods that operate on that data.</p>
+            
+            <div class="code-example">
+                <pre><code>class BankAccount {
+private:
+    double balance;
+    
+public:
+    void deposit(double amount) {
+        if (amount > 0) balance += amount;
+    }
+    
+    double getBalance() {
+        return balance;
+    }
+};
+
+BankAccount account;
+account.deposit(1000);
+cout << "Balance: " << account.getBalance();</code></pre>
+            </div>
+        </section>
+
+        <div class="nav-buttons">
+            <a href="pointers.html" class="nav-button">Previous: Pointers</a>
+            <a href="stl.html" class="nav-button">Next: STL</a>
+        </div>
+    </main>
+</body>
+</html>

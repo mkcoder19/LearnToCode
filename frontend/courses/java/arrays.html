@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Arrays | CodeLearn</title>
+    <link rel="stylesheet" href="../LearnToCode.css">
+    <style>
+        .concept-page { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .concept-section { margin: 2rem 0; }
+        .code-example { background: #f5f5f5; padding: 1rem; border-radius: 5px; overflow-x: auto; }
+        .array-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .array-table th, .array-table td { border: 1px solid #ddd; padding: 8px; }
+        .array-table th { background-color: #f2f2f2; }
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 2rem; }
+        .nav-button { padding: 0.8rem 1.5rem; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CodeLearn</div>
+            <ul class="nav-links">
+                <li><a href="../LearnToCode.html">Home</a></li>
+                <li><a href="index.html">Java Course</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="concept-page">
+        <h1>Java Arrays</h1>
+        
+        <section class="concept-section">
+            <h2>Array Basics</h2>
+            <p>Arrays are fixed-size containers that hold multiple values of the same type.</p>
+            
+            <div class="code-example">
+                <pre><code>// Array declaration and initialization
+int[] numbers = new int[5]; // Array of 5 integers
+String[] names = {"Alice", "Bob", "Charlie"}; // Initialized array
+
+// Accessing elements
+numbers[0] = 10; // First element
+int firstNumber = numbers[0];
+String secondName = names[1]; // "Bob"</code></pre>
+            </div>
+            
+            <table class="array-table">
+                <tr>
+                    <th>Feature</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td>Declaration</td>
+                    <td>Specifying type and name</td>
+                    <td><code>int[] numbers;</code></td>
+                </tr>
+                <tr>
+                    <td>Instantiation</td>
+                    <td>Creating with new keyword</td>
+                    <td><code>numbers = new int[5];</code></td>
+                </tr>
+                <tr>
+                    <td>Initialization</td>
+                    <td>Assigning values</td>
+                    <td><code>int[] nums = {1,2,3};</code></td>
+                </tr>
+                <tr>
+                    <td>Length</td>
+                    <td>Fixed size property</td>
+                    <td><code>int size = numbers.length;</code></td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="concept-section">
+            <h2>Multidimensional Arrays</h2>
+            <p>Arrays can have multiple dimensions (arrays of arrays).</p>
+            
+            <div class="code-example">
+                <pre><code>// 2D array (matrix)
+int[][] matrix = new int[3][3]; // 3x3 grid
+matrix[0][0] = 1; // First row, first column
+
+// Initializing 2D array
+int[][] grid = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};
+
+// Accessing elements
+int center = grid[1][1]; // 5</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Array Operations</h2>
+            
+            <div class="code-example">
+                <pre><code>// Looping through array
+for (int i = 0; i < numbers.length; i++) {
+    System.out.println(numbers[i]);
+}
+
+// Enhanced for loop
+for (String name : names) {
+    System.out.println(name);
+}
+
+// Array copy
+int[] copy = Arrays.copyOf(numbers, numbers.length);
+
+// Sorting
+Arrays.sort(numbers);</code></pre>
+            </div>
+        </section>
+
+        <div class="nav-buttons">
+            <a href="methods.html" class="nav-button">Previous: Methods</a>
+            <a href="collections.html" class="nav-button">Next: Collections</a>
+        </div>
+    </main>
+</body>
+</html>

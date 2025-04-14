@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Functions | CodeLearn</title>
+    <link rel="stylesheet" href="../LearnToCode.css">
+    <style>
+        .concept-page { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .concept-section { margin: 2rem 0; }
+        .code-example { background: #f5f5f5; padding: 1rem; border-radius: 5px; overflow-x: auto; }
+        .function-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .function-table th, .function-table td { border: 1px solid #ddd; padding: 8px; }
+        .function-table th { background-color: #f2f2f2; }
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 2rem; }
+        .nav-button { padding: 0.8rem 1.5rem; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CodeLearn</div>
+            <ul class="nav-links">
+                <li><a href="../LearnToCode.html">Home</a></li>
+                <li><a href="index.html">JavaScript Course</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="concept-page">
+        <h1>JavaScript Functions</h1>
+        
+        <section class="concept-section">
+            <h2>Function Declarations</h2>
+            <p>Functions are reusable blocks of code that perform specific tasks.</p>
+            
+            <div class="code-example">
+                <pre><code>// Function declaration
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+
+// Function call
+let message = greet("Alice");
+console.log(message); // "Hello, Alice!"</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Function Expressions</h2>
+            <p>Functions can be assigned to variables.</p>
+            
+            <div class="code-example">
+                <pre><code>// Function expression
+const add = function(a, b) {
+    return a + b;
+};
+
+console.log(add(2, 3)); // 5</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Arrow Functions (ES6)</h2>
+            <p>Concise syntax for writing functions.</p>
+            
+            <div class="code-example">
+                <pre><code>// Arrow function
+const multiply = (a, b) => a * b;
+
+// With multiple statements
+const greet = name => {
+    let message = `Hello, ${name}!`;
+    return message;
+};
+
+console.log(multiply(2, 3)); // 6
+console.log(greet("Bob")); // "Hello, Bob!"</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Parameters and Arguments</h2>
+            <p>Functions can accept parameters with default values.</p>
+            
+            <div class="code-example">
+                <pre><code>// Default parameters
+function createUser(name, role = "user") {
+    return { name, role };
+}
+
+// Rest parameters
+function sum(...numbers) {
+    return numbers.reduce((total, num) => total + num, 0);
+}
+
+console.log(createUser("Alice")); // {name: "Alice", role: "user"}
+console.log(sum(1, 2, 3, 4)); // 10</code></pre>
+            </div>
+        </section>
+
+        <div class="nav-buttons">
+            <a href="control_flow.html" class="nav-button">Previous: Control Flow</a>
+            <a href="objects.html" class="nav-button">Next: Objects</a>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Functions | CodeLearn</title>
+    <link rel="stylesheet" href="../LearnToCode.css">
+    <style>
+        .concept-page { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .concept-section { margin: 2rem 0; }
+        .code-example { background: #f5f5f5; padding: 1rem; border-radius: 5px; overflow-x: auto; }
+        .function-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .function-table th, .function-table td { border: 1px solid #ddd; padding: 8px; }
+        .function-table th { background-color: #f2f2f2; }
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 2rem; }
+        .nav-button { padding: 0.8rem 1.5rem; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CodeLearn</div>
+            <ul class="nav-links">
+                <li><a href="../LearnToCode.html">Home</a></li>
+                <li><a href="index.html">C++ Course</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="concept-page">
+        <h1>C++ Functions</h1>
+        
+        <section class="concept-section">
+            <h2>Function Basics</h2>
+            <p>Functions are reusable blocks of code that perform specific tasks.</p>
+            
+            <div class="code-example">
+                <pre><code>// Function declaration
+int addNumbers(int a, int b);
+
+// Function definition
+int addNumbers(int a, int b) {
+    return a + b;
+}
+
+// Function call
+int result = addNumbers(5, 3); // Returns 8</code></pre>
+            </div>
+            
+            <table class="function-table">
+                <tr>
+                    <th>Component</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td>Return Type</td>
+                    <td>Data type of returned value</td>
+                    <td><code>int</code></td>
+                </tr>
+                <tr>
+                    <td>Function Name</td>
+                    <td>Identifier for the function</td>
+                    <td><code>addNumbers</code></td>
+                </tr>
+                <tr>
+                    <td>Parameters</td>
+                    <td>Input values for the function</td>
+                    <td><code>(int a, int b)</code></td>
+                </tr>
+                <tr>
+                    <td>Function Body</td>
+                    <td>Code block with statements</td>
+                    <td><code>{ return a + b; }</code></td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="concept-section">
+            <h2>Parameter Passing</h2>
+            <p>C++ supports different ways to pass parameters to functions:</p>
+            
+            <div class="code-example">
+                <pre><code>// Pass by value (creates copy)
+void modifyValue(int x) {
+    x = x * 2;
+}
+
+// Pass by reference (modifies original)
+void modifyReference(int &x) {
+    x = x * 2;
+}
+
+// Pass by const reference (efficient for large objects)
+void printLargeObject(const BigObject &obj) {
+    // Can read but not modify obj
+}
+
+int num = 5;
+modifyValue(num); // num remains 5
+modifyReference(num); // num becomes 10</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Function Overloading</h2>
+            <p>C++ allows multiple functions with same name but different parameters.</p>
+            
+            <div class="code-example">
+                <pre><code>// Overloaded functions
+int add(int a, int b) {
+    return a + b;
+}
+
+double add(double a, double b) {
+    return a + b;
+}
+
+string add(string a, string b) {
+    return a + b;
+}
+
+add(5, 3); // Calls int version
+add(2.5, 3.7); // Calls double version
+add("Hello", "World"); // Calls string version</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Lambda Functions (C++11)</h2>
+            <p>Anonymous functions that can be defined inline.</p>
+            
+            <div class="code-example">
+                <pre><code>// Simple lambda
+auto greet = []() {
+    cout << "Hello World!";
+};
+greet();
+
+// Lambda with parameters
+auto add = [](int a, int b) {
+    return a + b;
+};
+int sum = add(5, 3);
+
+// Capturing variables
+int multiplier = 3;
+auto times = [multiplier](int x) {
+    return x * multiplier;
+};
+int result = times(5); // 15</code></pre>
+            </div>
+        </section>
+
+        <div class="nav-buttons">
+            <a href="control_flow.html" class="nav-button">Previous: Control Flow</a>
+            <a href="arrays.html" class="nav-button">Next: Arrays</a>
+        </div>
+    </main>
+</body>
+</html>

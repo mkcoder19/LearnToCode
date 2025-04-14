@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basics | CodeLearn</title>
+    <link rel="stylesheet" href="../LearnToCode.css">
+    <style>
+        .concept-page { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .concept-section { margin: 2rem 0; }
+        .code-example { background: #f5f5f5; padding: 1rem; border-radius: 5px; overflow-x: auto; }
+        .type-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .type-table th, .type-table td { border: 1px solid #ddd; padding: 8px; }
+        .type-table th { background-color: #f2f2f2; }
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 2rem; }
+        .nav-button { padding: 0.8rem 1.5rem; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CodeLearn</div>
+            <ul class="nav-links">
+                <li><a href="../LearnToCode.html">Home</a></li>
+                <li><a href="index.html">JavaScript Course</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="concept-page">
+        <h1>JavaScript Basics</h1>
+        
+        <section class="concept-section">
+            <h2>Variables and Data Types</h2>
+            <p>JavaScript has dynamic typing and several ways to declare variables:</p>
+            
+            <div class="code-example">
+                <pre><code>// Variable declarations
+var oldVariable = "Using var (function-scoped)";
+let mutableVariable = "Using let (block-scoped)";
+const constantVariable = "Using const (block-scoped, immutable)";
+
+// Data types
+let number = 42;               // Number
+let text = "Hello";            // String
+let isTrue = true;             // Boolean
+let nothing = null;            // Null
+let notDefined;                // Undefined
+let person = {                 // Object
+    name: "Alice",
+    age: 25
+};
+let colors = ["red", "green"]; // Array</code></pre>
+            </div>
+            
+            <table class="type-table">
+                <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td>Number</td>
+                    <td>Numeric values</td>
+                    <td><code>let age = 25;</code></td>
+                </tr>
+                <tr>
+                    <td>String</td>
+                    <td>Text data</td>
+                    <td><code>let name = "Alice";</code></td>
+                </tr>
+                <tr>
+                    <td>Boolean</td>
+                    <td>True/False</td>
+                    <td><code>let isActive = true;</code></td>
+                </tr>
+                <tr>
+                    <td>Object</td>
+                    <td>Key-value pairs</td>
+                    <td><code>let user = { name: "Bob" };</code></td>
+                </tr>
+                <tr>
+                    <td>Array</td>
+                    <td>Ordered lists</td>
+                    <td><code>let nums = [1, 2, 3];</code></td>
+                </tr>
+                <tr>
+                    <td>Null/Undefined</td>
+                    <td>No value</td>
+                    <td><code>let empty = null;</code></td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="concept-section">
+            <h2>Type Conversion and Coercion</h2>
+            <p>JavaScript automatically converts types in certain contexts:</p>
+            
+            <div class="code-example">
+                <pre><code>// Explicit conversion
+let num = "42";
+let realNum = Number(num); // Convert to number
+
+// Implicit coercion
+let result1 = "5" + 2;    // "52" (string concatenation)
+let result2 = "5" - 2;    // 3 (numeric subtraction)
+
+// Truthy/Falsy values
+if ("hello") { /* executes */ }
+if (0) { /* doesn't execute */ }</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Basic Output and Script Usage</h2>
+            <p>Ways to run JavaScript and display output:</p>
+            
+            <div class="code-example">
+                <pre><code>// Console output
+console.log("Hello Console!");
+
+// Browser alert
+alert("Hello User!");
+
+// Writing to document
+document.write("<h1>Hello Page!</h1>");
+
+// HTML script tag
+<script src="script.js"></script></code></pre>
+            </div>
+        </section>
+
+        <div class="nav-buttons">
+            <a href="index.html" class="nav-button">Back to Course</a>
+            <a href="operators.html" class="nav-button">Next: Operators</a>
+        </div>
+    </main>
+</body>
+</html>

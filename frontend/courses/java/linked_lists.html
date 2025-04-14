@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked Lists in DSA | CodeLearn</title>
+    <link rel="stylesheet" href="../LearnToCode.css">
+    <style>
+        .content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .theory {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        .practice {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+        code {
+            background-color: #f5f5f5;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CodeLearn</div>
+            <ul class="nav-links">
+                <li><a href="../LearnToCode_final.html">Home</a></li>
+                <li><a href="dsa_index.html">DSA with Java</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content">
+        <h1>Linked Lists in Data Structures</h1>
+        
+        <div class="theory">
+            <h2>Theory</h2>
+            <p>Linked lists are a linear data structure where elements are stored in nodes, each pointing to the next node.</p>
+            
+            <h3>Key Characteristics:</h3>
+            <ul>
+                <li>Dynamic size</li>
+                <li>O(n) access time for elements</li>
+                <li>Efficient insertions/deletions</li>
+            </ul>
+
+            <div class="visual">
+                <h3>Linked List Visualization:</h3>
+                <div style="display: flex; justify-content: center; margin: 1rem 0;">
+                    <div style="border: 1px solid #333; padding: 1rem; background: #f8f9fa;">
+                        <div style="display: flex; gap: 0.5rem; align-items: center;">
+                            <div style="border: 1px solid #333; padding: 0.5rem; min-width: 3rem; text-align: center;">Head</div>
+                            <div style="font-size: 1.5rem;">→</div>
+                            <div style="border: 1px solid #333; padding: 0.5rem; min-width: 3rem; text-align: center;">10</div>
+                            <div style="font-size: 1.5rem;">→</div>
+                            <div style="border: 1px solid #333; padding: 0.5rem; min-width: 3rem; text-align: center;">20</div>
+                            <div style="font-size: 1.5rem;">→</div>
+                            <div style="border: 1px solid #333; padding: 0.5rem; min-width: 3rem; text-align: center;">30</div>
+                            <div style="font-size: 1.5rem;">→</div>
+                            <div style="border: 1px solid #333; padding: 0.5rem; min-width: 3rem; text-align: center;">Null</div>
+                        </div>
+                        <p style="text-align: center; margin-top: 0.5rem;">Nodes connected via pointers</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Types and Java Implementation:</h3>
+            <ul>
+                <li><strong>Singly Linked:</strong> Nodes with next pointer only</li>
+                <li><strong>Doubly Linked:</strong> Nodes with next and prev pointers</li>
+                <li><strong>Circular:</strong> Last node points back to first</li>
+            </ul>
+            
+            <pre><code>// Node class for Singly Linked List
+class Node {
+    int data;
+    Node next;
+    Node(int data) { this.data = data; }
+}
+
+// Doubly Linked List Node
+class DNode {
+    int data;
+    DNode next, prev;
+    DNode(int data) { this.data = data; }
+}
+
+// Basic LinkedList operations
+class LinkedList {
+    Node head;
+    
+    void insert(int data) {
+        Node newNode = new Node(data);
+        newNode.next = head;
+        head = newNode;
+    }
+    
+    void printList() {
+        Node current = head;
+        while (current != null) {
+            System.out.print(current.data + " ");
+            current = current.next;
+        }
+    }
+}</code></pre>
+        </div>
+
+        <div class="practice">
+            <h2>Practice Problems</h2>
+            <ol>
+                <li>Implement a singly linked list.</li>
+                <li>Write a function to reverse a linked list.</li>
+                <li>Find the middle element of a linked list.</li>
+            </ol>
+        </div>
+
+        <a href="dsa_index.html" class="back-button">Back to DSA Course</a>
+    </main>
+</body>
+</html>

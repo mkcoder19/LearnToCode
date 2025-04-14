@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Operators | CodeLearn</title>
+    <link rel="stylesheet" href="../LearnToCode.css">
+    <style>
+        .concept-page { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .concept-section { margin: 2rem 0; }
+        .code-example { background: #f5f5f5; padding: 1rem; border-radius: 5px; overflow-x: auto; }
+        .operator-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .operator-table th, .operator-table td { border: 1px solid #ddd; padding: 8px; }
+        .operator-table th { background-color: #f2f2f2; }
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 2rem; }
+        .nav-button { padding: 0.8rem 1.5rem; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CodeLearn</div>
+            <ul class="nav-links">
+                <li><a href="../LearnToCode.html">Home</a></li>
+                <li><a href="index.html">JavaScript Course</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="concept-page">
+        <h1>JavaScript Operators</h1>
+        
+        <section class="concept-section">
+            <h2>Arithmetic Operators</h2>
+            <table class="operator-table">
+                <tr>
+                    <th>Operator</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td>+</td>
+                    <td>Addition</td>
+                    <td><code>let sum = 5 + 3; // 8</code></td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>Subtraction</td>
+                    <td><code>let diff = 5 - 3; // 2</code></td>
+                </tr>
+                <tr>
+                    <td>*</td>
+                    <td>Multiplication</td>
+                    <td><code>let product = 5 * 3; // 15</code></td>
+                </tr>
+                <tr>
+                    <td>/</td>
+                    <td>Division</td>
+                    <td><code>let quotient = 5 / 2; // 2.5</code></td>
+                </tr>
+                <tr>
+                    <td>%</td>
+                    <td>Modulus</td>
+                    <td><code>let remainder = 5 % 2; // 1</code></td>
+                </tr>
+            </table>
+
+            <div class="code-example">
+                <h3>Practical Examples</h3>
+                <pre><code>// Calculate area of rectangle
+let length = 10;
+let width = 5;
+let area = length * width; // 50
+
+// Integer vs floating-point division
+let intDiv = 5 / 2;    // 2.5
+let floatDiv = 5.0 / 2; // 2.5</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Comparison Operators</h2>
+            <table class="operator-table">
+                <tr>
+                    <th>Operator</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td>==</td>
+                    <td>Equal to</td>
+                    <td><code>5 == 3 // false</code></td>
+                </tr>
+                <tr>
+                    <td>!=</td>
+                    <td>Not equal</td>
+                    <td><code>5 != 3 // true</code></td>
+                </tr>
+                <tr>
+                    <td>></td>
+                    <td>Greater than</td>
+                    <td><code>5 > 3 // true</code></td>
+                </tr>
+                <tr>
+                    <td><</td>
+                    <td>Less than</td>
+                    <td><code>5 < 3 // false</code></td>
+                </tr>
+                <tr>
+                    <td>>=</td>
+                    <td>Greater than or equal</td>
+                    <td><code>5 >= 5 // true</code></td>
+                </tr>
+                <tr>
+                    <td><=</td>
+                    <td>Less than or equal</td>
+                    <td><code>5 <= 3 // false</code></td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="concept-section">
+            <h2>Logical Operators</h2>
+            <div class="code-example">
+                <pre><code>let a = true;
+let b = false;
+
+console.log(a && b); // false (AND)
+console.log(a || b); // true (OR)
+console.log(!a);      // false (NOT)</code></pre>
+            </div>
+        </section>
+
+        <div class="nav-buttons">
+            <a href="basics.html" class="nav-button">Previous: Basics</a>
+            <a href="control_flow.html" class="nav-button">Next: Control Flow</a>
+        </div>
+    </main>
+</body>
+</html>

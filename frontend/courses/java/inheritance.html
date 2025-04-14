@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Inheritance | CodeLearn</title>
+    <link rel="stylesheet" href="../LearnToCode.css">
+    <style>
+        .concept-page { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .concept-section { margin: 2rem 0; }
+        .code-example { background: #f5f5f5; padding: 1rem; border-radius: 5px; overflow-x: auto; }
+        .inheritance-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .inheritance-table th, .inheritance-table td { border: 1px solid #ddd; padding: 8px; }
+        .inheritance-table th { background-color: #f2f2f2; }
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 2rem; }
+        .nav-button { padding: 0.8rem 1.5rem; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CodeLearn</div>
+            <ul class="nav-links">
+                <li><a href="../LearnToCode.html">Home</a></li>
+                <li><a href="index.html">Java Course</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="concept-page">
+        <h1>Java Inheritance and Polymorphism</h1>
+        
+        <section class="concept-section">
+            <h2>Inheritance Basics</h2>
+            <p>Inheritance allows a class to acquire properties and methods of another class.</p>
+            
+            <div class="code-example">
+                <pre><code>// Base class
+class Animal {
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+
+// Derived class
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog is barking");
+    }
+}
+
+Dog myDog = new Dog();
+myDog.eat();  // Inherited from Animal
+myDog.bark(); // Defined in Dog</code></pre>
+            </div>
+            
+            <table class="inheritance-table">
+                <tr>
+                    <th>Concept</th>
+                    <th>Description</th>
+                    <th>Keyword</th>
+                </tr>
+                <tr>
+                    <td>Superclass</td>
+                    <td>Parent class being inherited from</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Subclass</td>
+                    <td>Child class that inherits</td>
+                    <td><code>extends</code></td>
+                </tr>
+                <tr>
+                    <td>Method Overriding</td>
+                    <td>Subclass provides specific implementation</td>
+                    <td><code>@Override</code></td>
+                </tr>
+                <tr>
+                    <td>super</td>
+                    <td>Reference to superclass members</td>
+                    <td><code>super</code></td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="concept-section">
+            <h2>Polymorphism</h2>
+            <p>Objects can take many forms through inheritance and interfaces.</p>
+            
+            <div class="code-example">
+                <pre><code>// Method overriding example
+class Animal {
+    void makeSound() {
+        System.out.println("Animal sound");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Meow");
+    }
+}
+
+Animal myAnimal = new Cat(); // Polymorphism
+myAnimal.makeSound(); // Outputs "Meow"</code></pre>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <h2>Abstract Classes and Interfaces</h2>
+            
+            <div class="code-example">
+                <pre><code>// Abstract class
+abstract class Shape {
+    abstract double area();
+}
+
+class Circle extends Shape {
+    double radius;
+    
+    @Override
+    double area() {
+        return Math.PI * radius * radius;
+    }
+}
+
+// Interface
+interface Drawable {
+    void draw();
+}
+
+class Square implements Drawable {
+    @Override
+    public void draw() {
+        System.out.println("Drawing square");
+    }
+}</code></pre>
+            </div>
+        </section>
+
+        <div class="nav-buttons">
+            <a href="classes.html" class="nav-button">Previous: Classes</a>
+            <a href="index.html" class="nav-button">Back to Course</a>
+        </div>
+    </main>
+</body>
+</html>
